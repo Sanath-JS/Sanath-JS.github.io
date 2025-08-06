@@ -13,7 +13,7 @@
             --text-primary: #ffffff;
             --text-secondary: #cccccc;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--primary-bg);
@@ -22,20 +22,20 @@
             padding: 0;
             line-height: 1.6;
         }
-        
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
-        
+
         header {
             padding: 60px 20px 40px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero-bg {
             position: absolute;
             top: 0;
@@ -48,7 +48,7 @@
                 linear-gradient(to bottom, var(--primary-bg), var(--secondary-bg));
             z-index: 1;
         }
-        
+
         .circuit-overlay {
             position: absolute;
             top: 0;
@@ -63,35 +63,46 @@
             pointer-events: none;
             z-index: 1;
         }
-        
+
         h1 {
             font-size: 2.5rem;
-            margin: 0 0 20px;
+            margin: 0 0 10px;
             color: var(--accent-blue);
             text-shadow: 0 0 15px rgba(0, 168, 232, 0.5);
             line-height: 1.2;
             position: relative;
+            z-index: 2;
         }
-        
+
+        .section-subtitle {
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+            margin-top: 10px;
+            z-index: 2;
+            position: relative;
+        }
+
         .back-link {
             display: inline-block;
             margin-bottom: 30px;
             color: var(--accent-light);
             text-decoration: none;
             transition: color 0.3s;
+            z-index: 2;
+            position: relative;
         }
-        
+
         .back-link:hover {
             color: var(--accent-blue);
         }
-        
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin: 50px 0;
         }
-        
+
         .gallery-item {
             background-color: var(--secondary-bg);
             padding: 20px;
@@ -99,13 +110,13 @@
             transition: transform 0.3s ease;
             border: 1px solid rgba(0, 168, 232, 0.2);
         }
-        
+
         .gallery-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 168, 232, 0.1);
             border-color: var(--accent-blue);
         }
-        
+
         .gallery-img {
             width: 100%;
             height: auto;
@@ -113,16 +124,16 @@
             margin-bottom: 15px;
             transition: opacity 0.3s;
         }
-        
+
         .gallery-img:hover {
             opacity: 0.9;
         }
-        
+
         .gallery-caption {
             font-size: 1rem;
             color: var(--text-secondary);
         }
-        
+
         .pub-link {
             color: var(--accent-light);
             text-decoration: none;
@@ -131,30 +142,34 @@
             margin-top: 10px;
             transition: color 0.3s;
         }
-        
+
         .pub-link:hover {
             color: var(--accent-blue);
             text-decoration: underline;
         }
-        
+
         .description {
             max-width: 800px;
             margin: 0 auto 50px;
             line-height: 1.7;
         }
-        
+
         footer {
             text-align: center;
             padding: 40px 20px;
             background-color: var(--secondary-bg);
             margin-top: 50px;
         }
-        
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
-            
+
+            .section-subtitle {
+                font-size: 1.5rem;
+            }
+
             .gallery {
                 grid-template-columns: 1fr;
             }
@@ -171,12 +186,12 @@
             <h1>Laser Spectroscopy Research</h1>
         </div>
     </header>
-    
+
     <main class="container">
         <div class="description">
-            <p>My research in Laser-Induced Breakdown Spectroscopy (LIBS) focuses on advanced material analysis techniques with applications in fusion reactor materials and liquid samples. Take a quick look of my work in this field.</p>
+            <p>My research in Laser-Induced Breakdown Spectroscopy (LIBS) focuses on advanced material analysis techniques with applications in fusion reactor materials and liquid samples. Take a quick look at my work in this field.</p>
         </div>
-        
+
         <div class="gallery">
             <div class="gallery-item">
                 <a href="https://doi.org/10.1016/j.nme.2023.101547" target="_blank" rel="noopener noreferrer">
@@ -187,7 +202,7 @@
                     View Publication <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
-            
+
             <div class="gallery-item">
                 <a href="https://doi.org/10.1016/j.sab.2025.107218" target="_blank" rel="noopener noreferrer">
                     <img src="images/opticalThin.jpg" alt="LIBS Research Image 2" class="gallery-img">
@@ -197,7 +212,7 @@
                     View Publication <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
-            
+
             <div class="gallery-item">
                 <a href="https://doi.org/10.1016/j.sab.2025.107286" target="_blank" rel="noopener noreferrer">
                     <img src="images/graphic_abs_minlev.jpg" alt="LIBS Research Image 3" class="gallery-img">
@@ -209,9 +224,11 @@
             </div>
         </div>
     </main>
-    
+
     <footer>
-        
+        <div class="container">
+            <!-- Optional footer content -->
+        </div>
     </footer>
 </body>
 </html>
