@@ -42,7 +42,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 30%, rgba(0, 168, 232, 0.1) 0%, transparent 20%),
                 radial-gradient(circle at 80% 70%, rgba(0, 168, 232, 0.1) 0%, transparent 20%),
                 linear-gradient(to bottom, var(--primary-bg), var(--secondary-bg));
@@ -56,7 +56,7 @@
             width: 100%;
             height: 100%;
             opacity: 0.05;
-            background-image: 
+            background-image:
                 linear-gradient(to right, var(--accent-blue) 1px, transparent 1px),
                 linear-gradient(to bottom, var(--accent-blue) 1px, transparent 1px);
             background-size: 20px 20px;
@@ -104,7 +104,7 @@
         }
 
         .pdf-button {
-            display: inline-flex;
+            display: flex;
             flex-direction: column;
             align-items: center;
             padding: 15px 25px;
@@ -116,7 +116,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
-            width: 400px;
+            width: 380px;
         }
 
         .pdf-button:hover {
@@ -133,15 +133,8 @@
             box-shadow: 0 0 10px rgba(0, 168, 232, 0.1);
         }
 
-        /* New style for scroll icon */
-        .scroll-icon {
-            font-size: 12rem; /* large icon */
-            margin-bottom: 15px;
-            color: var(--accent-blue);
-            filter: drop-shadow(0 0 5px rgba(0, 168, 232, 0.5));
-        }
-
         .pdf-label {
+            text-align: center;
             font-size: 1.2rem;
         }
 
@@ -152,7 +145,11 @@
             margin-top: 50px;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
             .button-wrapper {
                 flex-direction: column;
                 gap: 30px;
@@ -160,24 +157,13 @@
 
             .pdf-button {
                 width: 100%;
-                max-width: 400px;
-            }
-
-            .pdf-button img {
-                width: 100%;
-                max-width: 360px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
+                max-width: 380px;
             }
         }
     </style>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
 </head>
 <body>
@@ -185,9 +171,7 @@
         <div class="hero-bg"></div>
         <div class="circuit-overlay"></div>
         <div class="container">
-            <a href="index.html" class="back-link"
-              ><i class="fas fa-arrow-left"></i> Back to Main Page</a
-            >
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Main Page</a>
             <h1>Photonic Integrated Circuit Design</h1>
         </div>
     </header>
@@ -197,8 +181,7 @@
             <p>
                 This section showcases my work on photonic integrated circuits,
                 including layout design, simulation, and fabrication processes.
-                Click the buttons below to view my detailed project report and
-                certificate.
+                Click the buttons below to view my detailed project report and certificate.
             </p>
         </div>
 
@@ -218,9 +201,8 @@
                 href="https://github.com/Sanath-JS/Sanath-JS.github.io/blob/main/UBCxPhot1xCertificate_edX.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Certificate PDF"
             >
-                <i class="fas fa-scroll scroll-icon" aria-hidden="true"></i>
+                <img src="images/ubc.jpg" alt="Certificate Thumbnail" />
                 <div class="pdf-label">Certificate</div>
             </a>
         </div>
