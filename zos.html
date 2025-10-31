@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sanath Shetty | Photonic IC Design Portfolio</title>
+    <style>
+        :root {
+            --primary-bg: #0a0a12;
+            --secondary-bg: #121225;
+            --accent-blue: #00a8e8;
+            --accent-light: #4cc9f0;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(0, 168, 232, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(0, 168, 232, 0.1) 0%, transparent 20%),
+                linear-gradient(to bottom, var(--primary-bg), var(--secondary-bg));
+            z-index: 1;
+        }
+
+        .circuit-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image:
+                linear-gradient(to right, var(--accent-blue) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--accent-blue) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px;
+            color: var(--accent-blue);
+            text-shadow: 0 0 15px rgba(0, 168, 232, 0.5);
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-light);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--accent-light);
+            text-decoration: none;
+            transition: color 0.3s;
+            z-index: 2;
+            position: relative;
+        }
+
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+
+        .description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+            background-color: var(--secondary-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 168, 232, 0.2);
+        }
+
+        .project-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .project-image img:hover {
+            transform: scale(1.03);
+        }
+
+        .project-details {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 8px;
+        }
+
+        .project-description {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        .pdf-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: transparent;
+            border: 2px solid var(--accent-blue);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--accent-blue);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 200px;
+        }
+
+        .pdf-button:hover {
+            background-color: var(--accent-blue);
+            color: var(--primary-bg);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--secondary-bg);
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .project-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .project-image, .project-details {
+                min-width: 100%;
+            }
+        }
+    </style>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+</head>
+<body>
+    <header>
+        <div class="hero-bg"></div>
+        <div class="circuit-overlay"></div>
+        <div class="container">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Main Page</a>
+            <h1>Optical System Design</h1>
+            <p class="description">
+                Explore my work on optical design and analysis.
+            </p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Project 1 -->
+        <div class="project-container">
+            <div class="project-image">
+                <img src="images/achDoubletLayout.bmp" alt="Photonic Waveguide Design" />
+            </div>
+            <div class="project-details">
+                <h2 class="project-title">Achromatic Doublet</h2>
+                <p class="project-description">
+                    This project focuses on the design and analysis results for an achromatic doublet lens using Zemax OpticStudio.
+                </p>
+                <a
+                    class="pdf-button"
+                    href="images/achDoublet.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fas fa-file-pdf"></i> View Full Report
+                </a>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-container">
+            <div class="project-image">
+                <img src="images/landscp_Layout.bmp" alt="Optical Modulator Design" />
+            </div>
+            <div class="project-details">
+                <h2 class="project-title">Wollaston landscape Lens</h2>
+                <p class="project-description">
+                    A simple early photographic lens that provides a wide field of view with improved sharpness compared to simple lenses.
+                </p>
+                <a
+                    class="pdf-button"
+                    href="images/landscp.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fas fa-file-pdf"></i> View Full Report
+                </a>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-container">
+            <div class="project-image">
+                <img src="images/modRCtele_Layout.bmp" alt="Photonic Circuit Layout" />
+            </div>
+            <div class="project-details">
+                <h2 class="project-title">Ritchey–Chrétien Telescope </h2>
+                <p class="project-description">
+                    A specialized type of reflecting telescope that uses hyperbolic primary and secondary mirrors to minimize optical aberrations..
+                </p>
+                <a
+                    class="pdf-button"
+                    href="images/modRCtele.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fas fa-file-pdf"></i> View Full Report
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p></p>
+        </div>
+    </footer>
+</body>
+</html>
