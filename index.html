@@ -1,320 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanath Shetty | Photonics Researcher</title>
-    <style>
-        :root {
-            --primary-bg: #0a0a12;
-            --secondary-bg: #121225;
-            --accent-blue: #00a8e8;
-            --accent-light: #4cc9f0;
-            --text-primary: #ffffff;
-            --text-secondary: #cccccc;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-primary);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-        
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(0, 168, 232, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 80% 70%, rgba(0, 168, 232, 0.1) 0%, transparent 20%),
-                linear-gradient(to bottom, var(--primary-bg), var(--secondary-bg));
-            z-index: 1;
-        }
-        
-        .circuit-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.05;
-            background-image: 
-                linear-gradient(to right, var(--accent-blue) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--accent-blue) 1px, transparent 1px);
-            background-size: 20px 20px;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        h1 {
-            font-size: 3.5rem;
-            margin: 0 0 20px;
-            color: var(--accent-blue);
-            text-shadow: 0 0 15px rgba(0, 168, 232, 0.5);
-            line-height: 1.2;
-        }
-        
-        .tagline {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-        
-        .intro-text {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: transparent;
-            color: var(--accent-blue);
-            border: 2px solid var(--accent-blue);
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent-blue);
-            color: var(--primary-bg);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 168, 232, 0.3);
-        }
-        
-        .btn-primary {
-            background-color: var(--accent-blue);
-            color: var(--primary-bg);
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--accent-light);
-            border-color: var(--accent-light);
-        }
-        
-        section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--accent-blue);
-            margin-bottom: 50px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent-blue);
-        }
-        
-        .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .interest-card {
-            background-color: var(--secondary-bg);
-            padding: 30px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(0, 168, 232, 0.2);
-        }
-        
-        .interest-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 168, 232, 0.1);
-            border-color: var(--accent-blue);
-        }
-        
-        .interest-icon {
-            font-size: 3rem;
-            color: var(--accent-blue);
-            margin-bottom: 20px;
-        }
-        
-        .interest-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--accent-light);
-        }
-        
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: var(--secondary-bg);
-        }
-        
-        .social-links {
-            margin: 20px 0;
-        }
-        
-        .social-links a {
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--accent-blue);
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .tagline {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .interests-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanath Shetty | Photonics Engineer</title>
+<meta name="description" content="Sanath Shetty, PhD — photonics engineer working in optical design, photonic integrated circuits and laser spectroscopy (LIBS).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-    <header>
-        <div class="hero-bg"></div>
-        <div class="circuit-overlay"></div>
-        <div class="hero-content">
-            <h1>Sanath Shetty</h1>
-            <div class="tagline">Photonics Researcher | Python Developer | PIC Enthusiast</div>
-            <div class="intro-text">
-                I'm a Doctoral Researcher at Comenius University specializing in laser induced breakdown spectroscopy, and image processing. My work combines optical technologies with advanced computation to solve complex scientific challenges.
-            </div>
-            <div>
-                <a href="resume.html" class="btn btn-primary">View My Resume</a>
-                <a href="#interests" class="btn">My Research Interests</a>
-            </div>
+<div class="spectrum"></div>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Sanath Shetty, PhD</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li class="opt"><a href="#skills">Skills</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="resume.html">Résumé</a></li>
+      <li class="opt"><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Photonics · Optics · Spectroscopy</p>
+    <h1>Photonics engineer</h1>
+    <p class="sub">Optical design · Photonic integrated circuits · Laser spectroscopy</p>
+    <p class="bio">I completed my PhD in Optics and Laser Spectroscopy at Comenius University in Bratislava (2022–2026), where I worked on laser-induced breakdown spectroscopy (LIBS) of fusion-relevant materials and liquid samples, including work within EUROfusion projects. Before my PhD I worked as an embedded systems engineer. I'm now moving into industry and building optical-design and photonic-IC projects alongside my research record.</p>
+    <a class="btn primary" href="#projects">See projects</a>
+    <a class="btn" href="resume.html">Résumé</a>
+    <a class="btn" href="#contact">Contact</a>
+    <div class="facts">
+      <div><b>PhD</b><span>Optics &amp; Laser Spectroscopy, Comenius University (2026)</span></div>
+      <div><b>MSc</b><span>Photonics, Manipal Academy of Higher Education (2022)</span></div>
+      <div><b>Certification</b><span>Silicon Photonics Design, Fabrication &amp; Data Analysis, UBCx</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Projects</h2>
+        <p>Optical and photonic design projects, and my PhD research in spectroscopy and imaging.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="on" data-f="all">All</button>
+        <button data-f="optical">Optical design</button>
+        <button data-f="pic">Photonic ICs</button>
+        <button data-f="spec">Spectroscopy</button>
+        <button data-f="imaging">Imaging &amp; ML</button>
+      </div>
+    </div>
+
+    <div class="grid" id="cards">
+      <a class="card" data-c="optical" href="zos.html#fibre">
+        <div class="fig"><img src="images/web/fibre_layout.png" alt="Ray trace of the C220TMD-A asphere focusing into a fibre" loading="lazy"></div>
+        <div class="body">
+          <span class="tag"><span class="field">Optical design</span> · Zemax OpticStudio · ZOS-API</span>
+          <h3>Laser-to-fibre coupling: single-mode vs multimode</h3>
+          <p>A 632.8 nm beam focused into single-mode and multimode fibres by a moulded asphere, with a 567-point alignment sweep scripted in Python.</p>
+          <div class="spec">SMF 98.8% · ±0.94 µm lateral (−1 dB)<br>MMF 50 / 105 µm core: ±24 / ±52 µm</div>
         </div>
-    </header>
-    
-    <section id="interests">
-        <div class="container">
-            <h2 class="section-title">Research Interests and Skills</h2>
-            <div class="interests-grid">
-                <div class="interest-card">
-				<div class="interest-icon"><i class="fas fa-lightbulb"></i></div>
-				<h3 class="interest-title">Laser Spectroscopy</h3>
-				<p>Specializing in LIBS (Laser-Induced Breakdown Spectroscopy) for material analysis, with applications in fusion reactor materials and liquid samples.</p>
-				<a href="laser-spectroscopy.html" style="color: var(--accent-light); text-decoration: none; display: inline-block; margin-top: 10px;">
-					View More <i class="fas fa-arrow-right"></i>
-				</a>
-			</div>
-                
-                <div class="interest-card">
-                    <div class="interest-icon"><i class="fas fa-project-diagram"></i></div>
-                    <h3 class="interest-title">Photonic IC Design</h3>
-                    <p>Designing photonic integrated circuits using KLayout, Lumerical INTERCONNECT, and MODE Solutions for applications in sensing and communications.</p>
-					<a href="pic.html" style="color: var(--accent-light); text-decoration: none; display: inline-block; margin-top: 10px;">
-					View More <i class="fas fa-arrow-right"></i>
-				</a>
-                </div>
-                
-                <div class="interest-card">
-                    <div class="interest-icon"><i class="fas fa-brain"></i></div>
-                    <h3 class="interest-title">Machine Learning</h3>
-                    <p>Applying neural networks for elemental quantification from spectral data and developing computer vision systems for scientific applications.</p>
-					<a href="ml.html" style="color: var(--accent-light); text-decoration: none; display: inline-block; margin-top: 10px;">
-					View More <i class="fas fa-arrow-right"></i>
-				</a>
-                </div>
-                
-                <div class="interest-card">
-                    <div class="interest-icon"><i class="fas fa-image"></i></div>
-                    <h3 class="interest-title">Image Processing</h3>
-                    <p>Developing algorithms for 3D image synthesis, depth quantification, and spectral analysis using OpenCV, MATLAB, and Python.</p>
-                </div>
-                
-                <div class="interest-card">
-                    <div class="interest-icon"><i class="fas fa-microscope"></i></div>
-                    <h3 class="interest-title">Optical System Design</h3>
-                    <p>Designing and aligning optical systems using Zemax OpticStudio, withwith expertise in both sequential and non-sequential optical design.</p>
-					<a href="zos.html" style="color: var(--accent-light); text-decoration: none; display: inline-block; margin-top: 10px;">
-					View More <i class="fas fa-arrow-right"></i>
-				</a>
-                </div>
-                <div class="interest-card">
-                    <div class="interest-icon"><i class="fas fa-microchip"></i></div>
-                    <h3 class="interest-title">Embedded Systems</h3>
-                    <p>Developing microcontroller-based systems for scientific instrumentation, with experience in Arduino, PIC32, and STM32 platforms.</p>
-                </div>
-            </div>
+      </a>
+
+      <a class="card" data-c="optical" href="zos.html#doublet">
+        <div class="fig"><img src="images/web/achDoubletLayout_thumb.png" alt="Ray layout of the achromatic doublet in Zemax OpticStudio" loading="lazy"></div>
+        <div class="body">
+          <span class="tag"><span class="field">Optical design</span> · Zemax OpticStudio</span>
+          <h3>Achromatic doublet</h3>
+          <p>Visible achromat analysed for spot size, MTF, ray fans and chromatic focal shift in Zemax OpticStudio.</p>
+          <div class="spec">F, d, C lines · 0–1° field<br>RMS spot 2.5–2.7 µm · focal shift 87 µm</div>
         </div>
-    </section>
-    
-    <section id="contact" style="background-color: var(--secondary-bg);">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p>I'm always interested in discussing research collaborations, new projects, or opportunities in photonics and computational imaging.</p>
-            <div class="social-links">
-                <a href="https://github.com/Sanath-JS" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/sanath-shetty-543a86149" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://orcid.org/0000-0002-4453-1554" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
-                <a href="mailto:sanath7shetty11@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-            <a href="resume.html" class="btn btn-primary">View Full Resume</a>
+      </a>
+
+      <a class="card" data-c="optical" href="zos.html#landscape">
+        <div class="fig"><img src="images/web/landscp_Layout_thumb.png" alt="Ray layout of the Wollaston landscape lens" loading="lazy"></div>
+        <div class="body">
+          <span class="tag"><span class="field">Optical design</span> · Zemax OpticStudio</span>
+          <h3>Wollaston landscape lens</h3>
+          <p>Wide-field single-meniscus camera lens with a stop, analysed across four field angles.</p>
+          <div class="spec">F, d, C lines · 0–22.5° field<br>RMS spot 96–286 µm</div>
         </div>
-    </section>
-    
-    <footer>
-        <div class="container">
+      </a>
+
+      <a class="card" data-c="optical" href="zos.html#rc">
+        <div class="fig"><img src="images/web/modRCtele_Layout_thumb.png" alt="Ray layout of the modified Ritchey–Chrétien telescope" loading="lazy"></div>
+        <div class="body">
+          <span class="tag"><span class="field">Optical design</span> · Zemax OpticStudio</span>
+          <h3>Modified Ritchey–Chrétien telescope</h3>
+          <p>Two-mirror hyperbolic telescope with a refractive element near focus; diffraction-limited across the field.</p>
+          <div class="spec">F, d, C lines · 0–0.35° field<br>RMS spot 0.59–0.75 µm vs Airy 7.69 µm</div>
         </div>
-    </footer>
+      </a>
+
+      <a class="card" data-c="pic" href="pic.html">
+        <div class="fig"><img src="images/web/mzi_layout.jpg" alt="KLayout layout of the unbalanced Mach–Zehnder interferometers" loading="lazy"></div>
+        <div class="body">
+          <span class="tag"><span class="field">Photonic ICs</span> · Course project · fabricated</span>
+          <h3>Unbalanced MZIs on SOI</h3>
+          <p>Designed in KLayout with the SiEPIC EBeam PDK, simulated in Lumerical, fabricated by electron-beam lithography and measured.</p>
+          <div class="spec">220 nm SOI · TE · 1500–1600 nm<br>ΔL 50–500 µm · measured FSR within 4.4% of sim.</div>
+        </div>
+      </a>
+
+      <a class="card" data-c="spec" href="laser-spectroscopy.html#compass">
+        <div class="fig cover"><img src="images/web/BP_screws.jpg" alt="Multi-elemental Boltzmann plot" loading="lazy"></div>
+        <div class="body">
+          <span class="tag"><span class="field">Spectroscopy</span> · PhD research</span>
+          <h3>CF-LIBS depth profiling, COMPASS tokamak</h3>
+          <p>Calibration-free LIBS depth profiles of the wall-deposited layer after the LiSn liquid-metal divertor campaign.</p>
+          <div class="spec">Li 0.3–0.81 at.% · Sn 0.1–0.23 at.%<br>Nucl. Mater. Energy · 2023</div>
+        </div>
+      </a>
+
+      <a class="card" data-c="spec" href="laser-spectroscopy.html#boron">
+        <div class="fig cover"><img src="images/web/opticalThin.jpg" alt="Tests of the optically thin condition" loading="lazy"></div>
+        <div class="body">
+          <span class="tag"><span class="field">Spectroscopy</span> · PhD research</span>
+          <h3>Optically thin plasma for trace boron in water</h3>
+          <p>Finding optically thin plasma conditions to quantify trace boron in levitated water droplets.</p>
+          <div class="spec">LOD 28.7 mg/L HBO₂ · mineral water 34.7 mg/L (±12%)<br>Spectrochim. Acta B · 2025</div>
+        </div>
+      </a>
+
+      <a class="card" data-c="spec" href="laser-spectroscopy.html#mineral">
+        <div class="fig"><img src="images/web/graphic_abs_minlev.jpg" alt="Graphical abstract: LIBS-AL analysis of mineral water" loading="lazy"></div>
+        <div class="body">
+          <span class="tag"><span class="field">Spectroscopy</span> · PhD research</span>
+          <h3>Calibration-free LIBS of mineral waters</h3>
+          <p>First calibration-free quantification of levitated liquids: Na, K, Li, Ca and Mg in three bottled waters.</p>
+          <div class="spec">3–27% error for major elements<br>Spectrochim. Acta B · 2025</div>
+        </div>
+      </a>
+
+      <a class="card" data-c="imaging" href="ml.html">
+        <div class="fig"><img src="images/web/rnn.jpg" alt="Graphical abstract: DNN and RNN on LIBS spectra" loading="lazy"></div>
+        <div class="body">
+          <span class="tag"><span class="field">Machine learning</span> · PhD research</span>
+          <h3>DNN and RNN on LIBS spectra</h3>
+          <p>DNN vs GRU and Bi-LSTM for the composition of fusion first-wall materials from 7,400 simulated spectra.</p>
+          <div class="spec">R² for W: 0.97 GRU · 0.96 Bi-LSTM · 0.37 DNN<br>Nucl. Mater. Energy · 2025</div>
+        </div>
+      </a>
+
+      <a class="card" data-c="imaging spec" href="imaging.html#plasma">
+        <div class="fig"><img src="images/web/plasmaDynamics.png" alt="Plasma, levitated droplet and their segmented interaction" loading="lazy"></div>
+        <div class="body">
+          <span class="tag"><span class="field">Imaging</span> · PhD research</span>
+          <h3>Plasma expansion dynamics in levitated droplets</h3>
+          <p>Fast photography of the plasma and shadowgraphy of the levitated droplet, overlapped to measure how much of the droplet is ablated.</p>
+          <div class="spec">Ablated area up to 27% · 6 and 16 µL droplets<br>Spectrochim. Acta B · 2026</div>
+        </div>
+      </a>
+
+      <a class="card" data-c="imaging" href="imaging.html#msc">
+        <div class="fig"><img src="images/heightprofile_cashew.png" alt="Reconstructed height map of a cashew kernel" loading="lazy"></div>
+        <div class="body">
+          <span class="tag"><span class="field">Imaging</span> · MSc thesis</span>
+          <h3>Handheld photometric-stereo 3D imager</h3>
+          <p>Raspberry Pi, camera and RGB LED ring that recover depth maps from 12 differently lit images, validated against a CMM.</p>
+          <div class="spec">Cashew grading by volume<br>6 grades · 85% accuracy on 30 samples</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><h2>Skills and tools</h2></div>
+    <div class="skills">
+      <div><h3>Optical design</h3><ul><li>Zemax OpticStudio (sequential, non-sequential)</li><li>Laser and optical alignment</li></ul></div>
+      <div><h3>Photonic ICs</h3><ul><li>Lumerical MODE, INTERCONNECT</li><li>KLayout, SiEPIC EBeam PDK</li><li>Corner and Monte Carlo analysis</li></ul></div>
+      <div><h3>Spectroscopy</h3><ul><li>LIBS and calibration-free LIBS</li><li>Plasma diagnostics: Boltzmann plots, Stark broadening</li><li>Nd:YAG lasers, ICCD detectors, vacuum systems</li></ul></div>
+      <div><h3>Software</h3><ul><li>Python: scikit-learn, PyTorch, PyQt5</li><li>MATLAB, OpenCV, ImageJ</li><li>Git</li></ul></div>
+      <div><h3>Electronics</h3><ul><li>PIC16, Arduino, C</li><li>Verilog, SystemVerilog</li><li>PCB design, signal acquisition</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Publications</h2>
+        <p>Peer-reviewed journal articles. Full list on <a href="https://scholar.google.com/citations?user=viD-7rMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0000-0002-4453-1554" target="_blank" rel="noopener">ORCID</a>.</p>
+      </div>
+    </div>
+    <ol class="pubs">
+      <li><div><div class="t">Nanosecond-LIBS-induced deuterium outgassing, diffusion, and surface modification in tungsten coatings</div><div class="j">Nuclear Fusion 67 (2027) 016032 · <a href="https://doi.org/10.1088/1741-4326/aeb81b" target="_blank" rel="noopener">doi:10.1088/1741-4326/aeb81b</a></div></div></li>
+      <li><div><div class="t">Quantification of eroded Fe contamination in plasma activated water using acoustic levitation assisted laser-induced breakdown spectroscopy by a novel method – multi-line calibration curve</div><div class="j">Plasma Chemistry and Plasma Processing 46 (2026) 73 · <a href="https://doi.org/10.1007/s11090-026-10680-6" target="_blank" rel="noopener">doi:10.1007/s11090-026-10680-6</a></div></div></li>
+      <li><div><div class="t">Plasma temporal expansion dynamics in droplets by laser-induced breakdown spectroscopy assisted by acoustic levitation (LIBS-AL)</div><div class="j">Spectrochimica Acta Part B 244 (2026) 107595 · <a href="https://doi.org/10.1016/j.sab.2026.107595" target="_blank" rel="noopener">doi:10.1016/j.sab.2026.107595</a></div></div></li>
+      <li><div><div class="t">Evaluation of DNN and RNN for the determination of the chemical composition of dimensionality-reduced LIBS spectra of fusion-based materials</div><div class="j">Nuclear Materials and Energy 45 (2025) 101994 · <a href="https://doi.org/10.1016/j.nme.2025.101994" target="_blank" rel="noopener">doi:10.1016/j.nme.2025.101994</a></div></div></li>
+      <li><div><div class="t">Laser-induced breakdown spectroscopy assisted by acoustic levitation (LIBS-AL) for the calibration-free quantification of elements of interest in liquids – Case study of mineral waters</div><div class="j">Spectrochimica Acta Part B 232 (2025) 107286 · <a href="https://doi.org/10.1016/j.sab.2025.107286" target="_blank" rel="noopener">doi:10.1016/j.sab.2025.107286</a></div></div></li>
+      <li><div><div class="t">Study of optically thin condition for quantification of trace quantity of boron in aqueous sample using LIBS assisted by acoustic levitation</div><div class="j">Spectrochimica Acta Part B 230 (2025) 107218 · <a href="https://doi.org/10.1016/j.sab.2025.107218" target="_blank" rel="noopener">doi:10.1016/j.sab.2025.107218</a></div></div></li>
+      <li><div><div class="t">Role of oxygen in suppression of boron incorporation in diamond films: Surface reactions insight</div><div class="j">Applied Surface Science 709 (2025) 163832 · <a href="https://doi.org/10.1016/j.apsusc.2025.163832" target="_blank" rel="noopener">doi:10.1016/j.apsusc.2025.163832</a></div></div></li>
+      <li><div><div class="t">Depth profile CF LIBS analysis of the wall deposited layer in the COMPASS tokamak after LiSn testing campaign</div><div class="j">Nuclear Materials and Energy 37 (2023) 101547 · <a href="https://doi.org/10.1016/j.nme.2023.101547" target="_blank" rel="noopener">doi:10.1016/j.nme.2023.101547</a></div></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>Contact</h2><p>Open to roles in optical design, photonic integrated circuits and laser spectroscopy.</p></div></div>
+    <div class="contact">
+      <a href="mailto:sanath7shetty11@gmail.com">sanath7shetty11@gmail.com</a>
+      <a href="https://www.linkedin.com/in/sanath-shetty-543a86149" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Sanath-JS" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://orcid.org/0000-0002-4453-1554" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://scholar.google.com/citations?user=viD-7rMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Sanath Shetty</div></footer>
+
+<script>
+document.querySelectorAll('.filters button').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.filters button').forEach(function (x) { x.classList.remove('on'); });
+    b.classList.add('on');
+    var f = b.dataset.f;
+    document.querySelectorAll('#cards .card').forEach(function (c) {
+      c.classList.toggle('hide', f !== 'all' && c.dataset.c.split(' ').indexOf(f) < 0);
+    });
+  });
+});
+</script>
 </body>
 </html>

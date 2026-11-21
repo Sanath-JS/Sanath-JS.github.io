@@ -1,245 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanath Shetty | Laser Spectroscopy Research</title>
-    <style>
-        :root {
-            --primary-bg: #0a0a12;
-            --secondary-bg: #121225;
-            --accent-blue: #00a8e8;
-            --accent-light: #4cc9f0;
-            --text-primary: #ffffff;
-            --text-secondary: #cccccc;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-primary);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            padding: 60px 20px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(0, 168, 232, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 80% 70%, rgba(0, 168, 232, 0.1) 0%, transparent 20%),
-                linear-gradient(to bottom, var(--primary-bg), var(--secondary-bg));
-            z-index: 1;
-        }
-
-        .circuit-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.05;
-            background-image: 
-                linear-gradient(to right, var(--accent-blue) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--accent-blue) 1px, transparent 1px);
-            background-size: 20px 20px;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin: 0 0 10px;
-            color: var(--accent-blue);
-            text-shadow: 0 0 15px rgba(0, 168, 232, 0.5);
-            line-height: 1.2;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-subtitle {
-            font-size: 1.8rem;
-            color: var(--accent-blue);
-            margin-top: 10px;
-            z-index: 2;
-            position: relative;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: var(--accent-light);
-            text-decoration: none;
-            transition: color 0.3s;
-            z-index: 2;
-            position: relative;
-        }
-
-        .back-link:hover {
-            color: var(--accent-blue);
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-
-        .gallery-item {
-            background-color: var(--secondary-bg);
-            padding: 20px;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(0, 168, 232, 0.2);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 168, 232, 0.1);
-            border-color: var(--accent-blue);
-        }
-
-        .gallery-img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            transition: opacity 0.3s;
-        }
-
-        .gallery-img:hover {
-            opacity: 0.9;
-        }
-
-        .gallery-caption {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .pub-link {
-            color: var(--accent-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-top: 10px;
-            transition: color 0.3s;
-        }
-
-        .pub-link:hover {
-            color: var(--accent-blue);
-            text-decoration: underline;
-        }
-
-        .description {
-            max-width: 800px;
-            margin: 0 auto 50px;
-            line-height: 1.7;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: var(--secondary-bg);
-            margin-top: 50px;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .section-subtitle {
-                font-size: 1.5rem;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laser-induced breakdown spectroscopy | Sanath Shetty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-    <header>
-        <div class="hero-bg"></div>
-        <div class="circuit-overlay"></div>
-        <div class="container">
-            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Main Page</a>
-            <h1>Laser Spectroscopy Research</h1>
-        </div>
-    </header>
-
-    <main class="container">
-        <div class="description">
-            <p>My research in Laser-Induced Breakdown Spectroscopy (LIBS) focuses on advanced material analysis techniques with applications in fusion reactor materials and liquid samples. Take a quick look at my work in this field.</p>
-        </div>
-
-        <div class="gallery">
-            <div class="gallery-item">
-                <a href="https://doi.org/10.1016/j.nme.2023.101547" target="_blank" rel="noopener noreferrer">
-                    <img src="images/BP_screws.jpg" alt="LIBS Research Image 1" class="gallery-img">
-                </a>
-                <p class="gallery-caption">Multi-Elemental Boltzmann Plot</p>
-                <a href="https://doi.org/10.1016/j.nme.2023.101547" class="pub-link" target="_blank" rel="noopener noreferrer">
-                    View Publication <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-            <div class="gallery-item">
-                <a href="https://doi.org/10.1016/j.sab.2025.107218" target="_blank" rel="noopener noreferrer">
-                    <img src="images/opticalThin.jpg" alt="LIBS Research Image 2" class="gallery-img">
-                </a>
-                <p class="gallery-caption">Tests for Optical Thin Condition</p>
-                <a href="https://doi.org/10.1016/j.sab.2025.107218" class="pub-link" target="_blank" rel="noopener noreferrer">
-                    View Publication <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-            <div class="gallery-item">
-                <a href="https://doi.org/10.1016/j.sab.2025.107286" target="_blank" rel="noopener noreferrer">
-                    <img src="images/graphic_abs_minlev.jpg" alt="LIBS Research Image 3" class="gallery-img">
-                </a>
-                <p class="gallery-caption">Graphical Abstract - LIBS Analysis of Acoustic Levitated Mineral Water</p>
-                <a href="https://doi.org/10.1016/j.sab.2025.107286" class="pub-link" target="_blank" rel="noopener noreferrer">
-                    View Publication <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-			
-			<div class="gallery-item">
-                <a href="https://doi.org/10.1016/j.nme.2025.101994" target="_blank" rel="noopener noreferrer">
-                    <img src="images/rnn.jpg" alt="LIBS Research Image 4" class="gallery-img">
-                </a>
-                <p class="gallery-caption">Graphical Abstract - Evaluation of RNN and DNN on LIBS sipectra for fusion related samples</p>
-                <a href="https://doi.org/10.1016/j.nme.2025.101994" class="pub-link" target="_blank" rel="noopener noreferrer">
-                    View Publication <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-			
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <!-- Optional footer content -->
-        </div>
-    </footer>
+<div class="spectrum"></div>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Sanath Shetty, PhD</a>
+    <ul>
+      <li><a href="index.html#projects" class="active">Projects</a></li>
+      <li><a href="index.html#publications">Publications</a></li>
+      <li><a href="resume.html">Résumé</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+<header class="page-head"><div class="wrap">
+  <a class="crumb" href="index.html#projects">← Projects</a>
+  <p class="eyebrow">Spectroscopy · PhD research · Comenius University, 2022–2026</p>
+  <h1>Laser-induced breakdown spectroscopy</h1>
+  <p>My PhD research used LIBS for quantitative material analysis: calibration-free LIBS (CF-LIBS) and depth profiling of fusion-relevant materials, and LIBS of liquid droplets held in an acoustic levitator (LIBS-AL). Numbers below are taken from the published papers; "My role" follows each paper's author-contribution statement.</p>
+</div></header>
+<section class="study" id="compass"><div class="wrap">
+  <h2>CF-LIBS depth profiling in the COMPASS tokamak</h2>
+  <p class="lead">Depth profiles of the layer deposited on Ni–Cr screws at different places in the COMPASS vessel during the liquid-metal (LiSn) divertor testing campaign, quantified without calibration standards.</p>
+  <div class="two">
+    <figure><img src="images/web/BP_screws.jpg" alt="Multi-elemental Boltzmann plot" loading="lazy"><figcaption>Multi-elemental Boltzmann plot</figcaption></figure>
+    <table class="data"><caption>Nuclear Materials and Energy 37 (2023) 101547</caption>
+          <tr><th>Setup</th><td>ns Nd:YAG at 532 nm · 100 mbar Ar · echelle spectrometer (Andor M5000) + iCCD (iStar DH743)</td></tr>
+          <tr><th>Plasma diagnostics</th><td>T<sub>e</sub> and n<sub>e</sub> from Cr I–II, Ni II and Fe I–II lines</td></tr>
+          <tr><th>Li content</th><td>0.3–0.81 at.%</td></tr>
+          <tr><th>Sn content</th><td>0.1–0.23 at.%</td></tr>
+          <tr><th>Li/Sn ratio</th><td>3–3.5 (at.%)</td></tr>
+          <tr><th>Sn detection limit</th><td>≈ 0.1 at.% in a Cr–Ni–Fe matrix</td></tr>
+          <tr><th>My role</th><td>Methodology, experiment, writing (review and editing)</td></tr>
+    </table>
+  </div>
+  <p class="links"><a class="btn" href="https://doi.org/10.1016/j.nme.2023.101547" target="_blank" rel="noopener">Read the paper (doi:10.1016/j.nme.2023.101547)</a></p>
+</div></section>
+<section class="study" id="boron"><div class="wrap">
+  <h2>Optically thin condition for trace boron in water</h2>
+  <p class="lead">Boron has only one usable doublet in the UV–NIR range (249.7 nm), and it self-absorbs. We used the branching-ratio method to find iCCD delay and gate times where the plasma is optically thin, then built a calibration curve for levitated, laser-dried droplets.</p>
+  <div class="two">
+    <figure><img src="images/web/opticalThin.jpg" alt="Tests of the optically thin condition" loading="lazy"><figcaption>Tests of the optically thin condition</figcaption></figure>
+    <table class="data"><caption>Spectrochimica Acta Part B 230 (2025) 107218</caption>
+          <tr><th>Setup</th><td>Nd:YAG 1064 nm, 7 ns · acoustic levitator · CW-laser pre-concentration · echelle + iCCD</td></tr>
+          <tr><th>Method</th><td>Branching ratio of the B I 249.67 / 249.77 nm doublet</td></tr>
+          <tr><th>Limit of detection</th><td>28.7 mg/L (as HBO<sub>2</sub>)</td></tr>
+          <tr><th>Bottled mineral water</th><td>34.7 mg/L HBO<sub>2</sub>, 12% error margin</td></tr>
+          <tr><th>My role</th><td>Methodology, data curation, visualisation, writing (original draft)</td></tr>
+    </table>
+  </div>
+  <p class="links"><a class="btn" href="https://doi.org/10.1016/j.sab.2025.107218" target="_blank" rel="noopener">Read the paper (doi:10.1016/j.sab.2025.107218)</a></p>
+</div></section>
+<section class="study" id="mineral"><div class="wrap">
+  <h2>Calibration-free LIBS of mineral waters</h2>
+  <p class="lead">The first calibration-free quantification of levitated liquid samples: three bottled mineral waters from Slovakia and the Czech Republic, analysed without containers, substrates or chemical pretreatment.</p>
+  <div class="two">
+    <figure><img src="images/web/graphic_abs_minlev.jpg" alt="Graphical abstract" loading="lazy"><figcaption>Graphical abstract</figcaption></figure>
+    <table class="data"><caption>Spectrochimica Acta Part B 232 (2025) 107286</caption>
+          <tr><th>Setup</th><td>Nd:YAG at 50 mJ · echelle spectrometer (λ/Δλ = 4000, 230–855 nm) + iCCD · ≈12 µL droplets</td></tr>
+          <tr><th>Elements</th><td>Na, K, Li (alkali) · Ca, Mg (alkaline earth)</td></tr>
+          <tr><th>Accuracy, major elements</th><td>3–27% relative error (Na, Ca, Mg)</td></tr>
+          <tr><th>Trace elements</th><td>Higher relative error (Li, K)</td></tr>
+          <tr><th>My role</th><td>Software, methodology, data curation, writing (review and editing)</td></tr>
+    </table>
+  </div>
+  <p class="links"><a class="btn" href="https://doi.org/10.1016/j.sab.2025.107286" target="_blank" rel="noopener">Read the paper (doi:10.1016/j.sab.2025.107286)</a></p>
+</div></section>
+<section class="study" id="iron"><div class="wrap">
+  <h2>Eroded iron in plasma-activated water</h2>
+  
+  <div class="two">
+    <div><p class="lead" style="margin-top:0">Quantifying Fe debris in plasma-activated water with LIBS-AL, using both conventional calibration curves and a new multi-line calibration based on Boltzmann plots.</p></div>
+    <table class="data"><caption>Plasma Chemistry and Plasma Processing 46 (2026) 73</caption>
+          <tr><th>Setup</th><td>Nd:YAG 1064 nm, 8 ns, 50 mJ · 1 mm spot on the levitated droplet · echelle + iCCD</td></tr>
+          <tr><th>Calibration</th><td>Fe standards at 4, 10, 20, 50, 100 ppm · Fe II 238.23, 263.12, 275.58 nm</td></tr>
+          <tr><th>Limit of detection</th><td>1.8 ppm (R² ≥ 0.989) · 6.8 ppm with the multi-line method</td></tr>
+          <tr><th>Plasma-activated water</th><td>23.7 ± 3.0 ppm (conventional) · 21.7 ± 1.5 ppm (multi-line)</td></tr>
+          <tr><th>My role</th><td>Formal analysis and investigation, writing</td></tr>
+    </table>
+  </div>
+  <p class="links"><a class="btn" href="https://doi.org/10.1007/s11090-026-10680-6" target="_blank" rel="noopener">Read the paper (doi:10.1007/s11090-026-10680-6)</a></p>
+</div></section>
+<section class="study" id="deuterium"><div class="wrap">
+  <h2>Deuterium outgassing caused by ns-LIBS in tungsten coatings</h2>
+  
+  <div class="two">
+    <div><p class="lead" style="margin-top:0">In-situ ns-LIBS and nuclear reaction analysis (NRA) in the Magnum-PSI linear plasma device, on compact and porous tungsten coatings, to check whether the LIBS laser itself disturbs deuterium-retention measurements.</p></div>
+    <table class="data"><caption>Nuclear Fusion 67 (2027) 016032</caption>
+          <tr><th>Setup</th><td>Nd:YAG 1064 nm, 8 ns · 0.8 mbar Ar · defocused 2.5 × 2.5 mm spot</td></tr>
+          <tr><th>Deuterium loss in the crater</th><td>66–79% (NRA)</td></tr>
+          <tr><th>Loss explained by ablation alone</th><td>21–42%, so the rest is laser-induced outgassing</td></tr>
+          <tr><th>Compact coatings</th><td>Melting and intermixing with the substrate</td></tr>
+          <tr><th>My role</th><td>Investigation (Magnum-PSI experiment)</td></tr>
+    </table>
+  </div>
+  <p class="links"><a class="btn" href="https://doi.org/10.1088/1741-4326/aeb81b" target="_blank" rel="noopener">Read the paper (doi:10.1088/1741-4326/aeb81b)</a></p>
+</div></section>
+</main>
+<footer><div class="wrap"><a href="index.html#projects">← All projects</a> · © 2026 Sanath Shetty</div></footer>
 </body>
 </html>

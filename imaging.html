@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imaging and image processing | Sanath Shetty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="spectrum"></div>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Sanath Shetty, PhD</a>
+    <ul>
+      <li><a href="index.html#projects" class="active">Projects</a></li>
+      <li><a href="index.html#publications">Publications</a></li>
+      <li><a href="resume.html">Résumé</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+<header class="page-head"><div class="wrap">
+  <a class="crumb" href="index.html#projects">← Projects</a>
+  <p class="eyebrow">Imaging · PhD research and MSc thesis</p>
+  <h1>Imaging and image processing</h1>
+  <p>Extracting quantitative information from camera images: plasma and droplet imaging in my PhD, and a handheld 3D photometric-stereo system in my MSc.</p>
+</div></header>
+
+<section class="study" id="plasma"><div class="wrap">
+  <h2>Plasma expansion dynamics in levitated droplets</h2>
+  <p class="lead">LIBS-AL has relied on pre-concentrating the droplet by laser heating to get a strong signal. To understand the laser–droplet interaction directly, we imaged the plasma with fast photo-detection on an iCCD and the droplet by shadowgraphy, and used the overlap of the two images, the <em>effective ablated area</em>, to follow how much of the droplet the plasma reaches over time.</p>
+  <div class="two">
+    <figure><img src="images/web/plasmaDynamics.png" alt="Fast photo of the plasma, shadowgraph of the levitated droplet, and their overlap (scale bar 1.35 mm)" loading="lazy"><figcaption>Fast photo of the plasma, shadowgraph of the levitated droplet, and their overlap (scale bar 1.35 mm)</figcaption></figure>
+    <table class="data"><caption>Spectrochimica Acta Part B 244 (2026) 107595</caption>
+          <tr><th>Laser</th><td>Nd:YAG 1064 nm, 7 ns · 0.5 mm spot · 61.22 J/cm²</td></tr>
+          <tr><th>Droplets</th><td>(6 ± 2) µL and (16 ± 2) µL, centre and edge alignment</td></tr>
+          <tr><th>Imaging</th><td>iCCD fast photos at 100–1000 ns delay, 200 ns gate · shadowgraphy · two Raspberry Pi HQ cameras for droplet volume</td></tr>
+          <tr><th>Effective ablated area</th><td>Up to 27% of the droplet area</td></tr>
+          <tr><th>Peak ablation</th><td>500 ns delay (centre) · 750 ns (edge)</td></tr>
+          <tr><th>Modelling</th><td>Drag model for expansion against external pressure</td></tr>
+          <tr><th>My role</th><td>Software, formal analysis, investigation, methodology, visualisation, writing (original draft)</td></tr>
+    </table>
+  </div>
+  <p class="links"><a class="btn" href="https://doi.org/10.1016/j.sab.2026.107595" target="_blank" rel="noopener">Read the paper (doi:10.1016/j.sab.2026.107595)</a></p>
+</div></section>
+
+<section class="study" id="msc"><div class="wrap">
+  <h2>Handheld photometric-stereo 3D imaging system</h2>
+  <p class="lead">MSc thesis, Manipal Academy of Higher Education (2022): <em>Design and development of photometric stereo imaging system for field applications</em>. A portable system that recovers a normal map, a reflectance (albedo) map and a depth map from images lit from different directions, then turns the depth map into real heights and volumes.</p>
+  <div class="two">
+    <figure><img src="images/heightprofile_cashew.png" alt="Reconstructed height map of a cashew kernel (Z colour scale)" loading="lazy"><figcaption>Reconstructed height map of a cashew kernel (Z colour scale)</figcaption></figure>
+    <table class="data"><caption>System</caption>
+          <tr><th>Controller</th><td>Raspberry Pi 4 + camera</td></tr>
+          <tr><th>Illumination</th><td>24-LED RGB ring (WS2812 5050)</td></tr>
+          <tr><th>Images per capture</th><td>12, each with different LEDs lit</td></tr>
+          <tr><th>Casing</th><td>Designed in CATIA, 3D printed</td></tr>
+          <tr><th>Software</th><td>Python, OpenCV (ArUco markers for scale), ImageJ</td></tr>
+          <tr><th>Validation</th><td>3D-printed reference, measured on a CMM</td></tr>
+          <tr><th>Application</th><td>Grading cashews by volume: 6 grades, 85% accuracy on 30 samples</td></tr>
+    </table>
+  </div>
+  <div style="margin-top:28px; max-width:760px">
+    <table class="data cols"><caption>Calculated height vs CMM measurement on the 3D-printed reference</caption>
+          <tr><th>Feature</th><th>CMM</th><th>Calculated (mean of 8 trials)</th><th>Deviation</th></tr>
+          <tr><td>1</td><td>10.5645</td><td>10.1543</td><td>0.4102</td></tr>
+          <tr><td>2</td><td>5.4305</td><td>3.55375</td><td>1.87675</td></tr>
+          <tr><td>3</td><td>2.7405</td><td>2.01845</td><td>0.72205</td></tr>
+          <tr><td>4</td><td>1.311</td><td>1.305775</td><td>0.005225</td></tr>
+          <tr><td>5</td><td>8.6895</td><td>6.4188</td><td>2.2707</td></tr>
+          <tr><td>6</td><td>4.32</td><td>1.903625</td><td>2.416375</td></tr>
+          <tr><td>7</td><td>2.143</td><td>1.176625</td><td>0.966375</td></tr>
+          <tr><td>8</td><td>0.9245</td><td>0.93745</td><td>0.01295</td></tr>
+          <tr><td>9</td><td>6.421</td><td>5.72525</td><td>0.69575</td></tr>
+          <tr><td>10</td><td>3.2415</td><td>2.444125</td><td>0.797375</td></tr>
+          <tr><td>11</td><td>1.5685</td><td>1.31055</td><td>0.25975</td></tr>
+    </table>
+    <p class="note">Values as reported in the thesis (Table 4.1). The thesis attributes the larger deviations to lens distortion, vignetting and stray light.</p>
+  </div>
+  <p class="links"><a class="btn" href="images/msc_thesis.pdf" target="_blank">Full thesis (PDF)</a></p>
+</div></section>
+</main>
+<footer><div class="wrap"><a href="index.html#projects">← All projects</a> · © 2026 Sanath Shetty</div></footer>
+</body>
+</html>
